@@ -1,0 +1,21 @@
+@import "constants";
+
+@mixin neumorphic($x, $y, $blur) {
+  box-shadow:
+    #{$x}px #{$y}px #{$blur}px $neumorphic-lower-shadow,
+    #{-$x}px #{-$y}px #{$blur}px $neumorphic-upper-shadow;
+}
+
+@mixin neumorphic_inset($x, $y, $blur) {
+  box-shadow:
+    inset #{$x}px #{$y}px #{$blur}px $neumorphic-lower-shadow,
+    inset #{-$x}px #{-$y}px #{$blur}px $neumorphic-upper-shadow;
+}
+
+.neu-up {
+  @include neumorphic(4, 4, 6);
+}
+
+.neu-down {
+  @include neumorphic_inset(4, 4, 6);
+}
